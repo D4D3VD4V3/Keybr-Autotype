@@ -6,7 +6,6 @@ SetKeyDelay, 0
 spl:=Chr(9251)
 
 WB := ComObjCreate("InternetExplorer.Application")
-;wb.navigate("www.keybr.com/multiplayer")
 WB.Navigate("http://www.keybr.com/#!game")
 
 while, wb.busy
@@ -21,9 +20,6 @@ Loop, % classes.length
 {
 	if Text:=classes[a_index-1].innertext
 	{
-		;(text!=%spl%)?SendInput,%text%:Sendinput, {space}
-		;text==%spl%?SendInput {space}:SendInput %text%
-		
 			if text!=%spl%
 				SendInput, %text%
 			else
